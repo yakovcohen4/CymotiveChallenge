@@ -5,7 +5,7 @@ export class GenericTable {
   private name: string;
   private primaryKey: string;
   private stack: Stack;
-  private table: Table;
+  public table: Table;
 
   public constructor(name: string, primaryKey: string, stack: Stack) {
     this.name = name;
