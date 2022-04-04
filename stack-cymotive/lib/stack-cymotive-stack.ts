@@ -5,7 +5,7 @@ import { Construct } from 'constructs';
 // Api Gateway
 import { RestApi, Cors, LambdaIntegration } from 'aws-cdk-lib/aws-apigateway';
 // Generic Table
-import { GenericTable } from '../dynamoDB/GenericTable';
+import { GenericTable } from '../services/DynamoDB/GenericTable';
 
 export class StackCymotiveStack extends Stack {
   // api: RestApi;
