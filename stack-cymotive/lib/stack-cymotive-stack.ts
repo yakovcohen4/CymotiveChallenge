@@ -4,14 +4,20 @@ import { Construct } from 'constructs';
 
 // Api Gateway
 import { RestApi, Cors, LambdaIntegration } from 'aws-cdk-lib/aws-apigateway';
+// Generic Table
+import { GenericTable } from '../dynamoDB/GenericTable';
 
 export class StackCymotiveStack extends Stack {
+  // api: RestApi;
   private api = new RestApi(this, 'cymotiveApi', {
     defaultCorsPreflightOptions: {
       allowOrigins: Cors.ALL_ORIGINS,
       allowMethods: Cors.ALL_ORIGINS,
     },
   });
+
+  // Create Table : cymotiveTable
+  private cymotiveTable = new GenericTable('cymotiveTable', 'vehicleId', this);
 
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
