@@ -1,7 +1,7 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
-
+// Lambda Nodejs
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 // Api Gateway
 import { RestApi, Cors, LambdaIntegration } from 'aws-cdk-lib/aws-apigateway';
 // Generic Services - DynamoDB-Table / s3-Bucket / Iam-Role
@@ -30,5 +30,32 @@ export class StackCymotiveStack extends Stack {
 
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
+
+    // ***** porter Lambda *****
+
+    // Create Role
+    const porterRole = new GenericRole(
+      'porterRole',
+      ['service-role/AWSLambdaBasicExecutionRole'] as string[],
+      this
+    );
+
+    // Create Lambda
+    const porterLambda = new NodejsFunction(this, 'porter', {
+      functionName: 'cymotive-porter',
+      entry: path.join(__dirname, './../services/Lambda/porter/porter.ts'),
+      handler: 'handler',
+      role: porterRole.role,
+      environment: {
+        BUCKET: this.cymotiveReportsBucket.bucket.bucketName,
+      },
+    });
+
+    // porter Lambda - Integration / Resources / Method -  API Gateway
+    const porterLambdaIntegration = new LambdaIntegration(porterLambda);
+    const porterLambdaResourceAddReport = this.api.root.addResource('api');
+    porterLambdaResourceAddReport.addMethod('Post', porterLambdaIntegration);
+
+    // ***** porter Lambda *****
   }
 }
