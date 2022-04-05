@@ -1,0 +1,782 @@
+[
+  {
+    "vehicleId": "e252d236-a830-5438-88e3-420aff355d2b",
+    "label": "VW Polo",
+    "modifiedDate": "2075-04-29T03:58:11.803Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "Polo",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 12
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 580
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 6
+      }
+    }
+  },
+  {
+    "vehicleId": "2df0f53c-7196-50c7-9154-2ae4e833f379",
+    "label": "VW Golf",
+    "modifiedDate": "2040-02-23T08:23:16.089Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "Golf",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 11
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 589
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 9
+      }
+    }
+  },
+  {
+    "vehicleId": "004ddb0c-ad7f-5144-84ba-29b0e1ec7eb3",
+    "label": "VW e-Golf",
+    "modifiedDate": "2034-10-28T15:22:39.010Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "e-Golf",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 10
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 590
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 5
+      }
+    }
+  },
+  {
+    "vehicleId": "9504fa4b-6e0a-5e76-b0ec-670157973758",
+    "label": "VW T-Cross",
+    "modifiedDate": "2106-04-01T04:26:52.462Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "T-Cross",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 0
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 521
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 6
+      }
+    }
+  },
+  {
+    "vehicleId": "3c63bef2-4853-5581-bb57-e60934c26d90",
+    "label": "VW Tiguan",
+    "modifiedDate": "2091-12-19T00:26:24.351Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "Tiguan",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 19
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 558
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 5
+      }
+    }
+  },
+  {
+    "vehicleId": "1fb0320b-9e1b-5ecf-a9b8-0ac5a9cf143c",
+    "label": "VW Passat Saloon",
+    "modifiedDate": "2060-06-10T18:18:26.984Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "Passat Saloon",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 3
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 543
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 7
+      }
+    }
+  },
+  {
+    "vehicleId": "a834f046-49b7-5c61-9b4a-38d0a829845a",
+    "label": "VW Passat Estate",
+    "modifiedDate": "2113-12-17T17:52:45.200Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "Passat Estate",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 0
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 577
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 9
+      }
+    }
+  },
+  {
+    "vehicleId": "a089591f-e38c-50e0-9685-3ff2648f1d78",
+    "label": "VW Jeta",
+    "modifiedDate": "2109-11-09T16:48:59.824Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "Jeta",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 4
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 586
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 10
+      }
+    }
+  },
+  {
+    "vehicleId": "61add0f9-ba37-5b8f-9ff0-ab7b66dbbd60",
+    "label": "VW ID.3",
+    "modifiedDate": "2031-11-30T03:58:41.545Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "ID.3",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 20
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 528
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 8
+      }
+    }
+  },
+  {
+    "vehicleId": "6a6f0713-0539-5ef0-81a2-450c7c2b5f01",
+    "label": "VW ID.4",
+    "modifiedDate": "2076-10-13T03:58:20.962Z",
+    "manufacturerType": "VW",
+    "manufacturerTitle": "ID.4",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 19
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 585
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 10
+      }
+    }
+  },
+  {
+    "vehicleId": "531bcfe3-f7f0-5faa-bb10-13486715fe3d",
+    "label": "Seat Leon",
+    "modifiedDate": "2109-10-08T03:06:26.920Z",
+    "manufacturerType": "Seat",
+    "manufacturerTitle": "Leon",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 17
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 551
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 9
+      }
+    }
+  },
+  {
+    "vehicleId": "6a02bcf5-ef88-54be-b420-cfb7b49d6913",
+    "label": "Seat Ateca",
+    "modifiedDate": "2064-08-06T01:59:25.521Z",
+    "manufacturerType": "Seat",
+    "manufacturerTitle": "Ateca",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 18
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 564
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 4
+      }
+    }
+  },
+  {
+    "vehicleId": "0350e0e0-7a93-5e09-adc5-d98ee40a7c92",
+    "label": "Seat Ibiza",
+    "modifiedDate": "2024-03-20T00:24:12.516Z",
+    "manufacturerType": "Seat",
+    "manufacturerTitle": "Ibiza",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 17
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 594
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 10
+      }
+    }
+  },
+  {
+    "vehicleId": "6cd278db-f0f9-5ad9-8c80-270d3b7d8957",
+    "label": "Seat Arona",
+    "modifiedDate": "2066-02-23T22:14:54.133Z",
+    "manufacturerType": "Seat",
+    "manufacturerTitle": "Arona",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 14
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 510
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 3
+      }
+    }
+  },
+  {
+    "vehicleId": "8430d2e7-bb38-5725-b1ca-88a856783628",
+    "label": "Seat Tarraco",
+    "modifiedDate": "2094-10-08T00:22:41.926Z",
+    "manufacturerType": "Seat",
+    "manufacturerTitle": "Tarraco",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 2
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 560
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 6
+      }
+    }
+  },
+  {
+    "vehicleId": "bd57f13c-becd-5dcf-8afc-4880e8475bbd",
+    "label": "Skoda Fabia",
+    "modifiedDate": "2046-11-06T13:08:33.039Z",
+    "manufacturerType": "Skoda",
+    "manufacturerTitle": "Fabia",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 11
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 592
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 9
+      }
+    }
+  },
+  {
+    "vehicleId": "71437df0-9145-5d0d-a96c-63967a1ff5d5",
+    "label": "Skoda Scala",
+    "modifiedDate": "2024-12-17T21:12:04.298Z",
+    "manufacturerType": "Skoda",
+    "manufacturerTitle": "Scala",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 15
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 582
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 5
+      }
+    }
+  },
+  {
+    "vehicleId": "d5857c52-d531-5564-bafb-b1cf01780ed3",
+    "label": "Skoda Octavia",
+    "modifiedDate": "2083-08-30T00:56:58.200Z",
+    "manufacturerType": "Skoda",
+    "manufacturerTitle": "Octavia",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 8
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 501
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 8
+      }
+    }
+  },
+  {
+    "vehicleId": "a04ea374-5cc4-5a29-aa84-10b64a7c8d8f",
+    "label": "Skoda Superb",
+    "modifiedDate": "2113-03-12T09:27:34.236Z",
+    "manufacturerType": "Skoda",
+    "manufacturerTitle": "Superb",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 10
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 564
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 5
+      }
+    }
+  },
+  {
+    "vehicleId": "da0dcdc3-2aa3-5b95-b7cc-e81333355fee",
+    "label": "Skoda Karoq",
+    "modifiedDate": "2067-08-31T12:31:22.155Z",
+    "manufacturerType": "Skoda",
+    "manufacturerTitle": "Karoq",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 15
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 568
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 5
+      }
+    }
+  },
+  {
+    "vehicleId": "a72f9e65-4c44-5f3b-a29b-cd6527cb83e2",
+    "label": "Skoda Kamiq",
+    "modifiedDate": "2037-04-14T22:11:25.880Z",
+    "manufacturerType": "Skoda",
+    "manufacturerTitle": "Kamiq",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 8
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 552
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 9
+      }
+    }
+  },
+  {
+    "vehicleId": "0d052150-6876-56de-9673-316c0cf11282",
+    "label": "Audi A1",
+    "modifiedDate": "2053-03-23T17:59:19.410Z",
+    "manufacturerType": "Audi",
+    "manufacturerTitle": "A1",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 8
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 534
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 10
+      }
+    }
+  },
+  {
+    "vehicleId": "cad83ed5-f55a-5a3b-94e2-94d3fb0643c1",
+    "label": "Audi A3",
+    "modifiedDate": "2029-06-19T03:18:52.382Z",
+    "manufacturerType": "Audi",
+    "manufacturerTitle": "A3",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 1
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 542
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 7
+      }
+    }
+  },
+  {
+    "vehicleId": "dacea4d9-9a48-5786-9506-bbd43721a59b",
+    "label": "Audi A4",
+    "modifiedDate": "2050-06-18T19:40:43.340Z",
+    "manufacturerType": "Audi",
+    "manufacturerTitle": "A4",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 20
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 520
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 3
+      }
+    }
+  },
+  {
+    "vehicleId": "86511701-0540-5fbd-97c3-e9ea0c6fb2a2",
+    "label": "Audi A5",
+    "modifiedDate": "2064-01-01T16:27:18.576Z",
+    "manufacturerType": "Audi",
+    "manufacturerTitle": "A5",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 20
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 581
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 7
+      }
+    }
+  },
+  {
+    "vehicleId": "2b153467-f51e-5e36-b8f5-dd82c31815ad",
+    "label": "Audi A6",
+    "modifiedDate": "2063-02-06T14:17:22.546Z",
+    "manufacturerType": "Audi",
+    "manufacturerTitle": "A6",
+    "signalsPerMinute": {
+      "infotainment": {
+        "canId": 11,
+        "busId": 50,
+        "acceptableMinValue": 2,
+        "acceptableMaxValue": 17,
+        "sum": 5
+      },
+      "windows": {
+        "canId": 46,
+        "busId": 12,
+        "acceptableMinValue": 522,
+        "acceptableMaxValue": 578,
+        "sum": 595
+      },
+      "airBag": {
+        "canId": 80,
+        "busId": 6,
+        "acceptableMinValue": 3,
+        "acceptableMaxValue": 8,
+        "sum": 9
+      }
+    }
+  }
+]
