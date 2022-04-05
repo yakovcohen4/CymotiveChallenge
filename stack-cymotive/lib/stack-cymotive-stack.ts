@@ -4,8 +4,11 @@ import { Construct } from 'constructs';
 
 // Api Gateway
 import { RestApi, Cors, LambdaIntegration } from 'aws-cdk-lib/aws-apigateway';
-// Generic Table
+// Generic Services - DynamoDB-Table / s3-Bucket / Iam-Role
 import { GenericTable } from '../services/DynamoDB/GenericTable';
+import { GenericBucket } from '../services/Bucket/GenericBucket';
+import { GenericRole } from '../services/Role/GenericRole';
+import * as path from 'path';
 
 export class StackCymotiveStack extends Stack {
   // api: RestApi;
