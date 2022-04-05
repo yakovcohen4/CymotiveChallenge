@@ -19,6 +19,12 @@ export class StackCymotiveStack extends Stack {
   // Create Table : cymotiveTable
   private cymotiveTable = new GenericTable('cymotiveTable', 'vehicleId', this);
 
+  // create Bucket
+  private cymotiveReportsBucket = new GenericBucket(
+    'cymotive-reports-bucket',
+    this
+  );
+
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
   }
