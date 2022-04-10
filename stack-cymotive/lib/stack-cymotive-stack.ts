@@ -24,7 +24,7 @@ export class StackCymotiveStack extends Stack {
 
   // create Bucket
   private cymotiveReportsBucket = new GenericBucket(
-    'cymotive-reports-bucket',
+    'cymotive-report-bucket',
     this
   );
 

@@ -3,7 +3,7 @@ import * as AWS from 'aws-sdk';
 const s3 = new AWS.S3({ region: 'eu-west-1' });
 const { nanoid } = require('nanoid');
 
-const bucketName = process.env.BUCKET || 'cymotive-reports-bucket';
+const bucketName = process.env.BUCKET || 'cymotive-report-bucket';
 
 exports.handler = async (event: APIGatewayProxyEvent) => {
   const params = {
