@@ -4,8 +4,13 @@ import { Construct } from 'constructs';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { S3EventSource } from 'aws-cdk-lib/aws-lambda-event-sources';
 // Api Gateway
-import { RestApi, Cors, LambdaIntegration } from 'aws-cdk-lib/aws-apigateway';
-// Generic Services - DynamoDB-Table / s3-Bucket / Iam-Role
+import {
+  RestApi,
+  Cors,
+  LambdaIntegration,
+  AuthorizationType,
+} from 'aws-cdk-lib/aws-apigateway';
+// iam Role
 import {
   Effect,
   PolicyDocument,
@@ -13,15 +18,15 @@ import {
   Role,
   ServicePrincipal,
 } from 'aws-cdk-lib/aws-iam';
+// Generic Services - DynamoDB-Table / s3-Bucket
 import { GenericTable } from '../services/DynamoDB/GenericTable';
 import { GenericBucket } from '../services/Bucket/GenericBucket';
-import { GenericRole } from '../services/Role/GenericRole';
 import { EventType } from 'aws-cdk-lib/aws-s3';
 
 import * as path from 'path';
 
 export class StackCymotiveStack extends Stack {
-  // api: RestApi;
+  // api: RestApi
   private api = new RestApi(this, 'cymotiveApi', {
     defaultCorsPreflightOptions: {
       allowOrigins: Cors.ALL_ORIGINS,
@@ -84,10 +89,12 @@ export class StackCymotiveStack extends Stack {
       },
     });
 
-    // porter Lambda - Integration / Resources / Method -  API Gateway
+    // Connection porter Lambda with API Gateway - Integration / Resources / Method
     const porterLambdaIntegration = new LambdaIntegration(porterLambda);
     const porterLambdaResourceAddReport = this.api.root.addResource('api');
-    porterLambdaResourceAddReport.addMethod('Post', porterLambdaIntegration);
+    porterLambdaResourceAddReport.addMethod('Post', porterLambdaIntegration, {
+      authorizationType: AuthorizationType.NONE,
+    });
 
     // ***** porter Lambda *****
 
