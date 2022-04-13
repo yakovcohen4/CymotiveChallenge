@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .video_wrapper {
   width: 100%;
   min-height: 100%;
@@ -22,6 +17,37 @@ code {
 
 video {
   width: 100%;
-  min-height: 100%;
-  object-fit: contain;
+  margin-bottom: -5px;
+  position: relative;
+  z-index: -1;
+  object-fit: cover;
+  height: 666px;
+}
+
+header {
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  left: 1vw;
+  top: 2vh;
+}
+#headline {
+  color: white;
+  position: absolute;
+  top: 150%;
+  left: 5%;
+  font-size: xx-large;
+}
+
+#wave {
+  background-color: transparent;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
