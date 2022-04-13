@@ -168,5 +168,88 @@ export class StackCymotiveStack extends Stack {
     ingestLambdaNodejs.addEventSource(eventS3);
 
     // ***** ingest Lambda *****
+
+    // ***** analyzer Lambda *****
+    const analyzerRole = new Role(this, 'analyzer-role-cdk', {
+      assumedBy: new ServicePrincipal('lambda.amazonaws.com'),
+      roleName: 'CymotiveAnalyzerRole',
+      inlinePolicies: {
+        PorterPolicy: new PolicyDocument({
+          statements: [
+            // Permission to Read objects in DynamoDB-Table
+            new PolicyStatement({
+              effect: Effect.ALLOW,
+              actions: [
+                'dynamodb:GetItem',
+                'dynamodb:DescribeTable',
+                'dynamodb:BatchGetItem',
+                'dynamodb:Scan',
+                'dynamodb:Query',
+                'dynamodb:ConditionCheckItem',
+                'dynamodb:List*',
+              ],
+              resources: [this.cymotiveTable.table.tableArn],
+            }),
+            // CloudWatch policy
+            new PolicyStatement({
+              effect: Effect.ALLOW,
+              actions: [
+                'logs:CreateLogStream',
+                'logs:CreateLogGroup',
+                'logs:PutLogEvents',
+              ],
+              resources: [
+                `arn:aws:logs:${this.region}:${this.account}:log-group:/aws/lambda/*:*:*`,
+              ],
+            }),
+          ],
+        }),
+      },
+    });
+
+    const analyzerLambdaNodejs = new NodejsFunction(this, 'analyzerHandler', {
+      functionName: 'cymotive-analyzer',
+      entry: path.join(__dirname, './../services/Lambda/analyzer/analyzer.ts'),
+      handler: 'handler',
+      role: analyzerRole,
+      environment: {
+        TABLE: this.cymotiveTable.table.tableName,
+      },
+    });
+
+    // analyzer Lambda Integration
+    const analyzerLambdaIntegration = new LambdaIntegration(
+      analyzerLambdaNodejs
+    );
+
+    // Create resource for analyzer Lambda (Resources / Method)
+    // NumberOfAnomalies
+    const analyzerLambdaResourceNumberOfAnomalies =
+      this.api.root.addResource('numberofanomalies');
+    analyzerLambdaResourceNumberOfAnomalies.addMethod(
+      'Get',
+      analyzerLambdaIntegration,
+      { authorizationType: AuthorizationType.NONE }
+    );
+
+    // NumberOfReports
+    const analyzerLambdaResourceNumberOfReports =
+      this.api.root.addResource('numberofreports');
+    analyzerLambdaResourceNumberOfReports.addMethod(
+      'Get',
+      analyzerLambdaIntegration,
+      { authorizationType: AuthorizationType.NONE }
+    );
+
+    // NumberOfVehicle
+    const analyzerLambdaResourceNumberOfVehicle =
+      this.api.root.addResource('numberofvehicle');
+    analyzerLambdaResourceNumberOfVehicle.addMethod(
+      'Get',
+      analyzerLambdaIntegration,
+      { authorizationType: AuthorizationType.NONE }
+    );
+
+    // ***** analyzer Lambda *****
   }
 }
