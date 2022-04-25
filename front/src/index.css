@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -51,3 +55,63 @@ header {
   left: 0;
   bottom: 0;
 }
+
+#statistics {
+  color: black;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  margin-top: 600px;
+  /* padding-left: 15px; */
+}
+
+.content {
+  padding: 0 4vw 4vh 4vw;
+  /* padding: 200px; */
+}
+
+.button {
+  cursor: pointer;
+  color: #000;
+  margin: 35px;
+  background: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  line-height: 54px;
+  border-radius: 40px;
+  font-weight: bold;
+  position: relative;
+  transition: 0.8s all ease;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  background-image: url('./assets/button.png');
+  width: 353px;
+  height: 216px;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -82px;
+  right: -73px;
+}
+.button span {
+  position: relative;
+  color: #000;
+  width: 199px;
+  height: 54px;
+  font-size: 22px;
+  line-height: 52px;
+  border-radius: 40px;
+  display: block;
+  z-index: 9;
+  transition: 0.5s all ease;
+  text-transform: uppercase;
+}
+.button:hover span {
+  letter-spacing: 1px;
+  color: #0d95d0;
+}
+

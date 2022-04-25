@@ -10,7 +10,10 @@ function Header() {
         Get Statistics About <br />
         The Future
         <br />
-        of Mobility
+        Of Mobility <br />
+        <a href="#statistics" className="button">
+          <span>learn more</span>
+        </a>
       </p>
       <div className="video_wrapper">
         <video autoPlay muted loop playsInline>
