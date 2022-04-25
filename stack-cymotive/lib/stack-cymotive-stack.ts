@@ -78,6 +78,9 @@ export class StackCymotiveStack extends Stack {
       },
     });
 
+    // add permissions to bucket for the porter role
+    this.cymotiveReportsBucket.bucket.grantWrite(porterRole);
+
     // Create Lambda
     const porterLambda = new NodejsFunction(this, 'porter', {
       functionName: 'cymotive-porter',
@@ -147,6 +150,10 @@ export class StackCymotiveStack extends Stack {
       },
     });
 
+    // add permissions to bucket and table for the porter role
+    this.cymotiveReportsBucket.bucket.grantRead(ingestRole);
+    this.cymotiveTable.table.grantWriteData(ingestRole);
+
     // Create Lambda
     const ingestLambdaNodejs = new NodejsFunction(this, 'ingest', {
       functionName: 'cymotive-ingest',
@@ -207,6 +214,9 @@ export class StackCymotiveStack extends Stack {
       },
     });
 
+    // add permissions to table for the analyzer role
+    this.cymotiveTable.table.grantReadData(analyzerRole);
+
     const analyzerLambdaNodejs = new NodejsFunction(this, 'analyzerHandler', {
       functionName: 'cymotive-analyzer',
       entry: path.join(__dirname, './../services/Lambda/analyzer/analyzer.ts'),
@@ -243,7 +253,7 @@ export class StackCymotiveStack extends Stack {
 
     // NumberOfVehicle
     const analyzerLambdaResourceNumberOfVehicle =
-      this.api.root.addResource('numberofvehicle');
+      this.api.root.addResource('numberofvehicles');
     analyzerLambdaResourceNumberOfVehicle.addMethod(
       'Get',
       analyzerLambdaIntegration,
