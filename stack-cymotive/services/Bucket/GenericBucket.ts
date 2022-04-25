@@ -20,8 +20,8 @@ export class GenericBucket {
     this.bucket = new Bucket(this.stack, this.name, {
       versioned: false,
       bucketName: this.name,
-      publicReadAccess: true,
-      websiteIndexDocument: 'Index.html',
+      publicReadAccess: false,
+      // websiteIndexDocument: 'Index.html',
     });
   }
 }
