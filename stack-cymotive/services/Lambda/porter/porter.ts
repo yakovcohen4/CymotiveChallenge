@@ -18,6 +18,23 @@ exports.handler = async (event: APIGatewayProxyEvent) => {
   }
   const vehicles = JSON.parse(event.body);
 
+  // vehicles is an object
+  if (!vehicles.length) {
+    params.Body = JSON.stringify(vehicles);
+    params.Key = `report-${nanoid()}.json`;
+    try {
+      await s3.putObject(params).promise();
+      return {
+        statusCode: 200,
+        body: JSON.stringify('succeeded'),
+      };
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+
+  // vehicles is an array of objects
   for (let vehicle of vehicles) {
     params.Body = JSON.stringify(vehicle);
     params.Key = `report-${nanoid()}.json`;
@@ -29,5 +46,8 @@ exports.handler = async (event: APIGatewayProxyEvent) => {
       return error;
     }
   }
-  return 'succeeded';
+  return {
+    statusCode: 200,
+    body: JSON.stringify('succeeded'),
+  };
 };
