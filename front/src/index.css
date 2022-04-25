@@ -56,18 +56,16 @@ header {
   bottom: 0;
 }
 
-#statistics {
+#content {
   color: black;
   bottom: 0;
   width: 100%;
   background-color: white;
   margin-top: 600px;
-  /* padding-left: 15px; */
 }
 
-.content {
+.content-container {
   padding: 0 4vw 4vh 4vw;
-  /* padding: 200px; */
 }
 
 .button {
