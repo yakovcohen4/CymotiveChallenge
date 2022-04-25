@@ -115,3 +115,13 @@ header {
   color: #0d95d0;
 }
 
+.company-information {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.company-information p {
+  font-size: 18px;
+  line-height: 30px;
+  padding-right: 15vw;
+  color: #313131;
+}
