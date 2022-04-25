@@ -46,5 +46,8 @@ exports.handler = async (event: APIGatewayProxyEvent) => {
   return {
     statusCode: 200,
     body: JSON.stringify(ans[path]),
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   };
 };
