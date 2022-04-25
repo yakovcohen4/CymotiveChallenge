@@ -1,11 +1,11 @@
 import Header from './components/Header';
-import Statistics from './components/Statistics';
+import Content from './components/Content';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Statistics />
+      <Content />
     </div>
   );
 }
