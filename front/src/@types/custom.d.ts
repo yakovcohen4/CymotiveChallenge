@@ -4,9 +4,9 @@ declare module '*.png';
 
 declare namespace DataInterface {
   interface data {
-    numberofreports: string;
-    numberofanomalies: string;
-    numberofvehicles: string;
+    numberofreports: { name: string; value: number };
+    numberofanomalies: { name: string; value: number };
+    numberofvehicles: { name: string; value: number };
   }
   type dataName = 'numberofreports' | 'numberofanomalies' | 'numberofvehicles';
 }
