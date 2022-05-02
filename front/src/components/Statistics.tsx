@@ -1,27 +1,78 @@
-import React from 'react';
+import { useCallback, useRef, useState } from 'react';
+import axios from 'axios';
+
+const initStats = {
+  numberofreports: { name: 'Reports', value: 0 },
+  numberofanomalies: { name: 'Anomalies', value: 0 },
+  numberofvehicles: { name: 'Vehicles', value: 0 },
+};
 
 function Statistics() {
-  return (
-    <div id="statistics">
-      <div className="content">
-        <h2>Statistics</h2>
+  // State for the statistics
+  const [data, setData] = useState<DataInterface.data>(initStats);
 
-        <h2>About Cymotive</h2>
-        <p>
-          CYMOTIVE operates under the assumption that connectivity is a game
-          changer for the automotive industry. Our vision is to make the
-          automotive industry a safe place.
-        </p>
-        <p>
-          To do so, we provide OEMs and Tier-1s with Cyber Security Engineering
-          Lifecycle Services and cutting-edge in-vehicle, backend, mobile
-          services, and other security products. We work with our clients during
-          the entire lifecycle phases to ensure security is embedded into their
-          products. Selected by the world’s #1 automotive group, our unique
-          Purple approach has proven itself as the most effective in dealing
-          with Cyber Security risks, threat detection and response.
-        </p>
-        <a href="https://www.cymotive.com/">Move to website</a>
+  // Ref for loading
+  const refsParagraph = useRef<HTMLParagraphElement[]>([]);
+
+  const getDataFromLambda = useCallback(
+    async (numOf: DataInterface.dataName, index: number) => {
+      refsParagraph.current[index].classList.add('loader');
+      try {
+        const response = await axios.get(
+          `https://l3uaqlkj4l.execute-api.eu-west-1.amazonaws.com/prod/${numOf}`
+        );
+        const dataFromRequest = await response.data;
+
+        const newData = { ...data };
+        newData[numOf].value = dataFromRequest;
+
+        refsParagraph.current[index].classList.remove('loader');
+        return setData(newData);
+      } catch (error) {
+        console.log(error);
+        refsParagraph.current[index].classList.remove('loader');
+      }
+    },
+    [data]
+  );
+
+  return (
+    <div>
+      <h2 id="statistics">Statistics</h2>
+
+      <div className="statistics-explanation">
+        These statistics give the most up-to-date information on mobility
+        status. <br />
+        The total number of reports and vehicles stored in the company. <br />{' '}
+        The number of anomalies, which are reports that are not consistent with
+        the data stored in the company, are also displayed.
+      </div>
+
+      <div className="statistics-container">
+        {Object.keys(data).map((key, index) => (
+          <div className="statistics-item" key={key}>
+            <p
+              ref={ref =>
+                (refsParagraph.current[index] = ref as HTMLParagraphElement)
+              }
+              className="button button-primary"
+              onClick={() => {
+                getDataFromLambda(
+                  key as DataInterface.dataName,
+                  index as number
+                );
+              }}
+            >
+              {data[key as DataInterface.dataName].value ? (
+                <span title={data[key as DataInterface.dataName].name}>
+                  {data[key as DataInterface.dataName].value}
+                </span>
+              ) : (
+                <span>{data[key as DataInterface.dataName].name}</span>
+              )}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
