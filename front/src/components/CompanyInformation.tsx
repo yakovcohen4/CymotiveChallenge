@@ -16,7 +16,13 @@ function CompanyInformation() {
         approach has proven itself as the most effective in dealing with Cyber
         Security risks, threat detection and response.
       </p>
-      <a href="https://www.cymotive.com/">To see more</a>
+      <span>
+        For more information, visit{' '}
+        <a href="https://www.cymotive.com/" target={'_blank'} rel="noreferrer">
+          Cymotive
+        </a>{' '}
+        website.
+      </span>
     </div>
   );
 }
