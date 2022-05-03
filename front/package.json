@@ -2,7 +2,7 @@
   "name": "front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://gitname.github.io/CymotiveChallenge/",
+  "homepage": "http://yakovcohen4.github.io/CymotiveChallenge/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
