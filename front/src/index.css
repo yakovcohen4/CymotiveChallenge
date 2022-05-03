@@ -37,8 +37,8 @@ header {
 
 #logo {
   position: absolute;
-  left: 1vw;
-  top: 2vh;
+  left: 2vw;
+  top: 4vh;
 }
 #headline {
   color: white;
@@ -113,6 +113,7 @@ header {
   color: #0d95d0;
 }
 
+/* company-information */
 .company-information {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -122,4 +123,94 @@ header {
   line-height: 30px;
   padding-right: 15vw;
   color: #313131;
+}
+
+/* statistics */
+.statistics-container {
+  display: flex;
+}
+.statistics-item {
+  width: 33.33%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.button-primary {
+  margin-top: 3rem;
+}
+.statistics-explanation {
+  font-size: 18px;
+  line-height: 30px;
+  padding-right: 12vw;
+  color: #313131;
+  margin: 1rem 0;
+}
+
+.loader {
+  animation: load 1.5s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(90deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  75% {
+    transform: rotateY(270deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    font-size: 16px;
+  }
+  .video_wrapper {
+    height: 600px;
+  }
+  video {
+    height: 600px;
+  }
+  #logo {
+    left: 4vw;
+    top: 3vw;
+  }
+  #headline {
+    top: 120%;
+    left: 5%;
+    font-size: x-large;
+  }
+  .button {
+    margin: 30px;
+  }
+  .button span {
+    font-size: 20px;
+  }
+  .statistics-container {
+    flex-direction: column;
+  }
+  .statistics-explanation {
+    padding-right: 0;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .statistics-item {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .company-information p {
+    padding-right: 0;
+    font-size: 16px;
+    line-height: 25px;
+  }
 }
