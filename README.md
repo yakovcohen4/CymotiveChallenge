@@ -1,135 +1,78 @@
 # Cymotive Challenge
 
-## AWS exercise
+This project is an Intrusion detection system (IDS) to detect anomalies in vehicles using AWS Cloud. <br>
+In this project, I develop ETL (Extract, transform, load) data pipelines to gather data from a vehicle and put them into a single location to query and extract insights.
 
-You will build an Intrusion detection system (IDS) system to detect anomalies in vehicles using AWS Cloud. In this assignment you will develop ETL (Extract, transform, load) data pipelines to gather data from a vehicle and put them into a single location to query and extract insights.
-
-You will use mock data reports located in the attached file called 'reports.json'.
-
-In the first stage, you will focus on collecting and saving the reports into a Data Lake .
-In the second stage, the system will have also the ability to save the reports into DynamoDb.
-In the third stage, you will add the ability to read and analyze the already saved reports.
+I used mock data of reports located in root dir called `reports.json`.
 
 ---
 
-## Topics :
+## AWS - Services
 
-#### IAM | Api-Gateway | Lambda | S3 | DynamoDB | Cloud watch | SQS | CloudFormation | CDK
+### S3 - cymotive-reports-bucket
 
----
+Created S3 bucket to storage all the reports of anomalies.
 
-## Resources :
+### DynamoDB - ids-table
 
-- **[AWS API Gateway with Lambda Function Tutorial (2018)](https://www.youtube.com/watch?v=RUXOLUCvJF0&list=PLaxxQQak6D_fPPkcKP1e75LvYEPipBNlw&index=1)**
-- **[AWS Lambda + DynamoDB Example Tutorial (2018)](https://www.youtube.com/watch?v=usgK4KsdNWM&list=PLaxxQQak6D_fPPkcKP1e75LvYEPipBNlw&index=2)**
-- **[AWS Lambda upload to s3 using Node JS (2020)](https://www.youtube.com/watch?v=Wnbw15Oue1k&t=177s)**
+Created DynamoDB table for all the items from reports with `vehicleId` as primary key.
 
-#### One more thing before you start, in case you are having difficulty - To see hints about every phase open the README in your vs code
+### Lambda - (Porter, Ingest, Analyzer)
 
----
+#### 1. Porter <br>
 
-## Phase 1:
+Lambda function for dealing with http requests with report\s in json format and saving them in S3 bucket
 
-- **Create REST api-gateway called `idsgateway`.**
+#### 2. Ingest <br>
 
-- **Create NodeJS lambda called `porter`.**
+Lambda function that invoke every time a report is uploaded to S3 bucket., and ingesting the reports from S3 bucket to DynamoDB table `cymotiveTable`.
 
-- **Create POST method on `idsgateway` and integrate it with `porter` lambda.**
+#### 3. Analyzer <br>
 
-- **Deploy the api to a new Stage called `api`.**
+Lambda Function that connects http request to query data in `cymotiveTable`, can get Number of:
 
-- **Create an s3 bucket.**
+    1. Number of reports.
+    2. Number of anomalies.
+    3. Number of vehicle.
 
-- **Implement porter lambda to receive events from `idsgateway` and save the received report into the bucket.**
+### API-Gateway - cymotiveApi
 
-- **Iterate over the reports located in the attached `reports.json` file and send them to your api gateway.**
-  **use some HTTP client of your choice. (axios is recommended).**
+#### 1. Get all reports <br>
 
-![Phase 1](./ReadMe.images/graph1.png)
+Allow to invoke lambda function through http requests.
 
-<!--
-Hints for Phase 1:
-1 - Read about `AWS-SDK` !
-2 - Granting appropriate permissions!
--->
+<h3>end points</h3>
 
----
+- <b>POST /</b> - send report\s in json format, invoke `porter`.
 
-## Phase 2:
+- <b>GET /numberofreports</b> - get number of reports, invoke `analyzer`.
 
-- **Create another NodeJS lambda called `ingest`.**
+- <b>GET /numberofanomalies</b> - get number of anomalies, invoke `analyzer`.
 
-- **Configure an s3 event notification to invoke the ingest lambda when a new object been inserted into the bucket.**
-
-- **Create a DynamoDB table called `ids-table`. Primary key: `vehicleId`.**
-
-- **Implement Ingest lambda to receive the object path from s3 on object insertion, then read the object and save it to DynamoDB.**
-
-### Tip:
-
-- **Watch out from recursion, it can cost you a lot of money! 😱💸**
-
-![Phase 2](./ReadMe.images/graph2.png)
-
-<!--
-Hints for Phase 2:
-1 - It is recommended to use `AWS.DynamoDB.DocumentClient` !
-2 - Granting appropriate permissions!
--->
+- <b>GET /numberofvehicles</b> - get number of vehicles, invoke `analyzer`.
 
 ---
 
-## Phase 3:
+## AWS-CDK
 
-- **Create NodeJS lambda called `analyzer`.**
+AWS-CDK allows me to upload a stack to `CloudFormation` using TS.<br> CloudFormation is not a simple service, but it is a powerful tool that allows you to create and manage your infrastructure.
 
-- **Create GET method on `idsgateway`, configure the integration point to invoke `analyzer` lambda.**
+CDK has the option to test templates and not to deal with zipping Lambda and other services. I've created all the AWS-Services above with CDK and not touched the Console, it helps to maintain the stack and let other devs work on the project.
 
-- **Implement `analyzer` lambda to support several GET paths.**
+### CloudFormation - template
 
-  - **`numberOfReports` – return the total number of reports stored in DynamoDb.**
+Simple Template:
 
-  - **`numberOfVehicles` – return the number of vehicles record stored in DynamoDb.**
+## ![Template](ReadMe.images/simple-template.png)
 
-  - **`numberOfAnomalies` – return the number of signals that their ‘sum’ value is out of the acceptable range.**
+## Front
 
-![Phase 3](ReadMe.images/graph3.png)
+Simple Front, Created with React to mobile and desktop.
 
-<!--
-Hints for Phase 3:
-1 - For a change in the GATEWAY API to take effect, you need to remember to do a deploy.
-2 - Pay attention to CORS - add to headers.
-3 - When creating the various requests in the api gateway you need to create a RESOURCE and within it the methods-
-   and note to mark proxy in the methods that are created.
-4 - Read about : lambda-proxy-vs-lambda-integration -
-    https://medium.com/@lakshmanLD/lambda-proxy-vs-lambda-integration-in-aws-api-gateway-3a9397af0e6d
--->
+![Front Page](./ReadMe.images/front-page.png)
 
 ---
 
-## Bonus I - Infrastructure as code (AWS CDK):
+## License
 
-**So far using the console much of Amazon's "magic" has happened behind the scenes for us.**
-**We will now use another Amazon service to configure everything ourselves by code. Including the roles, policies and functionality.**
-**It's called - Infrastructure as code**
-
-- **Read about [CloudFormation](https://aws.amazon.com/cloudformation/getting-started/) - Because the output of an AWS CDK program is an AWS CloudFormation template**
-- **Use [CDK - AWS Cloud Development Kit](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) And now solve the task by using this framework.**
-
----
-
-## Bonus II - (SQS):
-
-**We just connected another 10 million cars and we're receiving billions of records a minute.**
-
-- **Add a queue (using SQS) between the POST gateway and the porter lambda**
-- **Use either the console or the AWS CDK**
-- If you are having trouble:
-  - [API Proxy for SQS](https://medium.com/@pranaysankpal/aws-api-gateway-proxy-for-sqs-simple-queue-service-5b08fe18ce50)
-  - [AWS CDK: Amazon API Gateway integration for SQS](https://sbstjn.com/blog/aws-cdk-api-gateway-service-integration-sqs/)
-
----
-
-## Bonus III - Front-End:
-
-- **Create a React app to show the analytics from section 3.**
+All the right reserved for [@Cymotive](https://www.cymotive.com/)
