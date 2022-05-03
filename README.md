@@ -73,6 +73,20 @@ Simple Front, Created with React to mobile and desktop.
 
 ---
 
+## Run The App
+
+### Local use - 📌
+
+- **Clone the repo - https://github.com/yakovcohen4/CymotiveChallenge**
+- **Run `npm i` in dir `front` to install all the dependencies**
+- **Run `npm start` on `front` directory.**
+
+### Global use - 🌎
+
+- **The App - 🔗 [Cymotive Statistics](https://yakovcohen4.github.io/CymotiveChallenge/)**
+
+---
+
 ## License
 
 All the right reserved for [@Cymotive](https://www.cymotive.com/)
