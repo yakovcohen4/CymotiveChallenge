@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/CymotiveChallenge/static/css/main.7dcbb248.css",
-    "main.js": "/CymotiveChallenge/static/js/main.036e8da6.js",
+    "main.js": "/CymotiveChallenge/static/js/main.7dad88c3.js",
     "static/media/Cymotive_Homepage.mp4": "/CymotiveChallenge/static/media/Cymotive_Homepage.d6ea8a77a26b06decd54.mp4",
     "static/media/button.png": "/CymotiveChallenge/static/media/button.a8cce447c3c71803bc8b.png",
     "static/media/footer-wave.png": "/CymotiveChallenge/static/media/footer-wave.781da6de7228408e0c46.png",
     "static/media/logo.svg": "/CymotiveChallenge/static/media/logo.44ff17e97ae8f2893ab120329b0ae73a.svg",
     "index.html": "/CymotiveChallenge/index.html",
     "main.7dcbb248.css.map": "/CymotiveChallenge/static/css/main.7dcbb248.css.map",
-    "main.036e8da6.js.map": "/CymotiveChallenge/static/js/main.036e8da6.js.map"
+    "main.7dad88c3.js.map": "/CymotiveChallenge/static/js/main.7dad88c3.js.map"
   },
   "entrypoints": [
     "static/css/main.7dcbb248.css",
-    "static/js/main.036e8da6.js"
+    "static/js/main.7dad88c3.js"
   ]
 }
