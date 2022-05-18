@@ -8,30 +8,48 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set Up Node.js ${{ matrix.node-version }}
+      - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 13.x
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install NPM packages
+        run: npm ci
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: Deploy
-        run: |
-          git config --global user.name${{secrets.USER_NAME}}
-          git config --global user.email${{secrets.USER_EMAIL}}
-          git remote set-url origin https://${{secrets.ACCESS_TOKEN)}@github.com/${{secrets.USER_NAME}}/CymotiveChallenge
-          npm run deploy
+      - name: Run tests
+        run: npm run test
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
