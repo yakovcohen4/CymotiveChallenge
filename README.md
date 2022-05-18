@@ -19,21 +19,21 @@ Created DynamoDB table for all the items from reports with `vehicleId` as primar
 
 ### Lambda - (Porter, Ingest, Analyzer)
 
-#### 1. Porter <br>
+#### 1. Porter
 
 Lambda function for dealing with http requests with report\s in json format and saving them in S3 bucket
 
-#### 2. Ingest <br>
+#### 2. Ingest
 
 Lambda function that invoke every time a report is uploaded to S3 bucket., and ingesting the reports from S3 bucket to DynamoDB table `cymotiveTable`.
 
-#### 3. Analyzer <br>
+#### 3. Analyzer
 
 Lambda Function that connects http request to query data in `cymotiveTable`, can get Number of:
 
-    1. Number of reports.
-    2. Number of anomalies.
-    3. Number of vehicle.
+1.  Number of reports.
+2.  Number of anomalies.
+3.  Number of vehicle.
 
 ### API-Gateway - cymotiveApi
 
